@@ -1,14 +1,26 @@
 <template>
-  <div></div>
+  <div>
+    <CustomVModel v-model="customValue"></CustomVModel>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import { data } from "./data";
 
+import CustomVModel from "@/components/CustomVModel.vue";
+
 export default Vue.extend({
   name: "Home",
+  components: {
+    CustomVModel,
+  },
   data,
+  watch: {
+    customValue(val) {
+      console.log(val);
+    },
+  },
   created() {
     this.changePersonalInformation();
     this.getTableList();

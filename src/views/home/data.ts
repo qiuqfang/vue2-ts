@@ -11,11 +11,13 @@ type TableDataType = {
 type HomeDataType = {
   personalInformation: PersonalInformationType;
   tableData: readonly TableDataType[];
+  customValue: string | boolean;
 };
 
 export const data = (): HomeDataType => {
   return {
     personalInformation: {},
     tableData: [],
+    customValue: true,
   };
 };
